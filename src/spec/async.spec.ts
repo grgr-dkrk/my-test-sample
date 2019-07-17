@@ -1,6 +1,6 @@
-type ResolveType = {
+interface ResolveType {
   data: string;
-};
+}
 
 // Promise
 const fetchData = (): Promise<ResolveType> => {
