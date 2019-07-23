@@ -8,7 +8,6 @@ export const initialState: StateType = {
     name: 'dkrk',
     token: '12345678abcdefg',
   },
-  status: 'fetching',
 };
 
 /**

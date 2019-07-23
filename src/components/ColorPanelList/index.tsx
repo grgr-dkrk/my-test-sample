@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { ColorPalletType } from '@/modules/ColorPanelList/types';
-import { MapDispatchTypes } from '@/containers/ColorPallet';
+import { ColorPanelType } from '@/modules/ColorPanelList/types';
+import { MapDispatchTypes } from '@/containers/ColorPanelList';
 import ColorPanel from './ColorPanel';
 import Form from './Form';
-type ColorPalletProps = {
-  items: ColorPalletType;
+type ColorPanelListProps = {
+  items: ColorPanelType[];
 } & MapDispatchTypes;
 
-const ColorPallet: React.FC<ColorPalletProps> = props => {
+const ColorPanelList: React.FC<ColorPanelListProps> = props => {
   return (
     <div>
       <Form
         handleSubmit={props.add}
-        handleFetchData={props.fetchData}
+        handleFetchData={props.fetch}
         itemCount={props.items.length}
       />
       <ul
@@ -34,4 +34,4 @@ const ColorPallet: React.FC<ColorPalletProps> = props => {
   );
 };
 
-export default ColorPallet;
+export default ColorPanelList;

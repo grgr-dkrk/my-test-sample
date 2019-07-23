@@ -17,11 +17,6 @@ export const fetchLuckyColorData = () =>
     type: 'fetchLuckyColorPanel',
   } as const);
 
-export const fetchLuckyColorDataFailue = () =>
-  ({
-    type: 'fetchLuckyColorDataFailue',
-  } as const);
-
 export const failureFetchLuckyColor = () =>
   ({
     type: 'failueFetchLuckyColor',

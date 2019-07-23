@@ -1,4 +1,4 @@
-import { UserStateType, StatusType } from './types';
+import { UserStateType } from './types';
 
 export const fetchUserData = () =>
   ({
@@ -8,11 +8,5 @@ export const fetchUserData = () =>
 export const setUserData = (payload: UserStateType) =>
   ({
     type: 'setUserData',
-    payload,
-  } as const);
-
-export const setUserDataStatus = (payload: StatusType) =>
-  ({
-    type: 'setUserDataStatus',
     payload,
   } as const);

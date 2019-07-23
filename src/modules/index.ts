@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import ColorPallet from './ColorPanelList/reducer';
+import ColorPanelList from './ColorPanelList/reducer';
 import User from './UserData/reducer';
+import ColorPanelListSaga from './ColorPanelList/saga';
+import { fork } from 'redux-saga/effects';
 
-export const rootReducers = combineReducers({ ColorPallet, User });
+export const rootReducers = combineReducers({ ColorPanelList, User });
+export function* rootSagas() {
+  yield fork(ColorPanelListSaga);
+}

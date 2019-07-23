@@ -1,4 +1,4 @@
-import ColorPallet from '@/components/ColorPallet/';
+import ColorPanelList from '@/components/ColorPanelList/';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { AppState } from '@/store';
@@ -7,15 +7,15 @@ import { ColorPanelType, ActionTypes } from '@/modules/ColorPanelList/types';
 
 const mapStateToProps = (state: AppState) => {
   return {
-    items: state.ColorPallet.items,
-    user: state.UserData.data,
+    items: state.ColorPanelList.items,
+    user: state.User.data,
   };
 };
 
 export type MapDispatchTypes = {
   add: (data: ColorPanelType) => void;
   remove: (id: number) => void;
-  fetchData: () => void;
+  fetch: () => void;
 };
 
 /**
@@ -27,7 +27,7 @@ const mapDispatchToProps = (
   return {
     add: data => dispatch(Actions.addColor(data)),
     remove: id => dispatch(Actions.removeColor(id)),
-    fetchData: () => dispatch(Actions.fetchLuckyColorData()),
+    fetch: () => dispatch(Actions.fetchLuckyColorData()),
   };
 };
 
@@ -37,4 +37,4 @@ const mapDispatchToProps = (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ColorPallet);
+)(ColorPanelList);
