@@ -1,5 +1,5 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/'],
   testRegex: '((\\.|/)(test|spec))\\.(jsx?|tsx?)$', // テスト対象ファイルの指定
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: { '^@/(.+)': '<rootDir>/src/$1' }, // @/はsrc/のalias

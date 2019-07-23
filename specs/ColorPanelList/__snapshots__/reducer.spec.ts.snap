@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPanelListのReducer addAction 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "colorCode": "#000",
+      "id": 10,
+      "label": "漆黒の黒",
+      "published": "20190724",
+    },
+  ],
+}
+`;
+
+exports[`ColorPanelListのReducer removeAction 1`] = `
+Object {
+  "items": Array [],
+}
+`;
