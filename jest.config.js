@@ -5,4 +5,10 @@ module.exports = {
   moduleNameMapper: { '^@/(.+)': '<rootDir>/src/$1' }, // @/はsrc/のalias
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'], // 拡張
   transform: { '\\.(js|ts|tsx)?$': 'babel-jest' },
+  coverageDirectory: './coverage/',
+  collectCoverageFrom: [
+    '<rootDir>/specs/**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+  ],
 };
