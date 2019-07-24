@@ -15,12 +15,7 @@ const ColorPanelList: React.FC<ColorPanelListProps> = props => {
         handleFetchData={props.fetch}
         itemCount={props.items.length}
       />
-      <ul
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-        }}
-      >
+      <ul>
         {props.items.map(item => (
           <ColorPanel
             id={item.id}

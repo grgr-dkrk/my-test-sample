@@ -6,14 +6,13 @@ type ColorPanelProps = ColorPanelType;
 const ColorPanel = (props: ColorPanelProps) => {
   return (
     <li>
-      {props.colorCode}
+      {props.label || props.colorCode}
       <span
         role="presentation"
         style={{
           display: 'block',
           backgroundColor: props.colorCode,
           height: 60,
-          width: 60,
         }}
       ></span>
     </li>
