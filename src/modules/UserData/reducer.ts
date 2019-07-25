@@ -6,7 +6,7 @@ import { StateType, ActionTypes } from './types';
 export const initialState: StateType = {
   data: {
     name: 'dkrk',
-    token: '12345678abcdefg',
+    token: '',
   },
 };
 

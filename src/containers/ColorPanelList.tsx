@@ -25,8 +25,8 @@ const mapDispatchToProps = (
   dispatch: Dispatch<ActionTypes>
 ): MapDispatchTypes => {
   return {
-    add: data => dispatch(Actions.addColor(data)),
-    remove: id => dispatch(Actions.removeColor(id)),
+    add: data => dispatch(Actions.addColorPanel(data)),
+    remove: id => dispatch(Actions.removeColorPanel(id)),
     fetch: () => dispatch(Actions.fetchLuckyColorData()),
   };
 };

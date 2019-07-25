@@ -3,8 +3,8 @@ import { expectSaga } from 'redux-saga-test-plan';
 import { throwError } from 'redux-saga-test-plan/providers';
 import { select, call } from 'redux-saga/effects';
 import {
-  addColor,
-  failureFetchLuckyColor,
+  addColorPanel,
+  failureFetchLuckyColorData,
 } from '@/modules/ColorPanelList/actions';
 import { handleFetchLuckyColorData } from '@/modules/ColorPanelList/saga';
 import * as Api from '@/modules/ColorPanelList/api';
@@ -22,7 +22,7 @@ describe('Redux Sa・Ga', () => {
       token: '12345678',
     },
   };
-  const fakeAddColorPanel = (): ReturnType<typeof addColor> => ({
+  const fakeAddColorPanel = (): ReturnType<typeof addColorPanel> => ({
     type: 'addColorPanel',
     payload: { id: fakeItems.length, ...data },
   });
@@ -46,7 +46,7 @@ describe('Redux Sa・Ga', () => {
         [select(getItems), fakeItems],
         [call(Api.FetchLuckyColor, null), throwError(error)],
       ])
-      .put(failureFetchLuckyColor())
+      .put(failureFetchLuckyColorData())
       .run();
   });
 });

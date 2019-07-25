@@ -1,5 +1,8 @@
 import reducer, { initialState } from '@/modules/ColorPanelList/reducer';
-import { addColor, removeColor } from '@/modules/ColorPanelList/actions';
+import {
+  addColorPanel,
+  removeColorPanel,
+} from '@/modules/ColorPanelList/actions';
 import { StateType } from '@/modules/ColorPanelList/types';
 
 describe('ColorPanelListのReducer', () => {
@@ -8,14 +11,14 @@ describe('ColorPanelListのReducer', () => {
   beforeEach(() => {
     state = reducer(
       initialState,
-      addColor({ id: 10, label: '漆黒の黒', colorCode: '#000' })
+      addColorPanel({ id: 10, label: '漆黒の黒', colorCode: '#000' })
     );
   });
   it('addAction', () => {
     expect(state).toMatchSnapshot();
   });
   it('removeAction', () => {
-    let newState = reducer(state, removeColor(10));
+    let newState = reducer(state, removeColorPanel(10));
     expect(newState).toMatchSnapshot();
   });
 });

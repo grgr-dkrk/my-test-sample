@@ -11,7 +11,7 @@ export type ColorPanelType = {
   published?: string;
 };
 
-export type DataType = Omit<ColorPanelType, 'id' | 'published'>;
+export type DataType = Pick<ColorPanelType, 'label' | 'colorCode'>;
 
 /**
  * State

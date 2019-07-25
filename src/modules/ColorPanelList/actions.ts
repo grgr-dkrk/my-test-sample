@@ -1,12 +1,12 @@
 import { ColorPanelType } from '@/modules/ColorPanelList/types';
 
-export const addColor = (payload: ColorPanelType) =>
+export const addColorPanel = (payload: ColorPanelType) =>
   ({
     type: 'addColorPanel',
     payload,
   } as const);
 
-export const removeColor = (payload: ColorPanelType['id']) =>
+export const removeColorPanel = (payload: ColorPanelType['id']) =>
   ({
     type: 'removeColorPanel',
     payload,
@@ -14,10 +14,10 @@ export const removeColor = (payload: ColorPanelType['id']) =>
 
 export const fetchLuckyColorData = () =>
   ({
-    type: 'fetchLuckyColorPanel',
+    type: 'fetchLuckyColorData',
   } as const);
 
-export const failureFetchLuckyColor = () =>
+export const failureFetchLuckyColorData = () =>
   ({
-    type: 'failueFetchLuckyColor',
+    type: 'failureFetchLuckyColorData',
   } as const);

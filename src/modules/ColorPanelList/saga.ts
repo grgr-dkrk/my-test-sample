@@ -1,7 +1,7 @@
 import { select, call, put, takeEvery } from 'redux-saga/effects';
 import {
-  addColor,
-  failureFetchLuckyColor,
+  addColorPanel,
+  failureFetchLuckyColorData,
 } from '@/modules/ColorPanelList/actions';
 import { AppState } from '@/store/';
 import { DataType } from '@/modules/ColorPanelList/types';
@@ -16,7 +16,7 @@ export function* handleFetchLuckyColorData() {
     const items: ReturnType<typeof getItems> = yield select(getItems);
     const token = user && user.data && user.data.token ? user.data.token : null;
     const data: DataType = yield call(Api.FetchLuckyColor, token);
-    yield put<ReturnType<typeof addColor>>({
+    yield put<ReturnType<typeof addColorPanel>>({
       type: 'addColorPanel',
       payload: {
         id: items.length,
@@ -26,14 +26,14 @@ export function* handleFetchLuckyColorData() {
     });
   } catch (error) {
     console.error(error);
-    yield put<ReturnType<typeof failureFetchLuckyColor>>({
-      type: 'failueFetchLuckyColor',
+    yield put<ReturnType<typeof failureFetchLuckyColorData>>({
+      type: 'failureFetchLuckyColorData',
     });
   }
 }
 
 function* mySaga() {
-  yield takeEvery('fetchLuckyColorPanel', handleFetchLuckyColorData);
+  yield takeEvery('fetchLuckyColorData', handleFetchLuckyColorData);
 }
 
 export default mySaga;
